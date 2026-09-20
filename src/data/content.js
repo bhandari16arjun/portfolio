@@ -11,11 +11,11 @@ export const site = {
   notice: "Integrated B.Tech + M.Tech IT student · Graduating May 2027",
   portrait: "src/assets/portrait.jpeg",
   intro:
-    "I build intelligent full-stack applications and AI-driven systems — from Agentic Text-to-SQL pipelines to scalable microservices. Currently a final year Integrated B.Tech + M.Tech IT student at IIITM Gwalior passionate about software engineering and generative AI.",
+    "I build highly scalable backend infrastructure and AI-driven systems — from multi-region AWS deployments to Agentic Text-to-SQL pipelines. Currently a final year Integrated B.Tech + M.Tech IT student at IIITM Gwalior passionate about robust software engineering.",
   aboutBig:
     "I write software that bridges the gap between scalable systems and AI — clean architecture from MERN stack backends to LLM workflows.",
   about:
-    "I'm a final year IT student at IIITM Gwalior (Integrated B.Tech + M.Tech '27). I've built a human-in-the-loop AI chat assistant at Flickmatch, a production-ready Agentic Text-to-SQL pipeline, and a microservices-inspired online code judge. I'm a LeetCode Knight and Codeforces Specialist with a strong foundation in Data Structures, Algorithms, and System Design.",
+    "I'm a final year IT student at IIITM Gwalior (Integrated B.Tech + M.Tech '27). I've architected multi-region AWS infrastructure at Flickmatch, built a production-ready Agentic Text-to-SQL pipeline, and engineered a microservices-inspired online code judge. I'm a LeetCode Knight and Codeforces Specialist with a strong foundation in Data Structures, Algorithms, and System Design.",
 }
 
 export const navLinks = [
@@ -151,14 +151,15 @@ export const experience = [
     company: "Flickmatch",
     period: "Dec 2025 — Sep 2026",
     summary:
-      "Developed a human-in-the-loop AI chat assistant with asynchronous processing to generate context-aware suggestions, engineered calendar invite systems, and architected multi-region AWS infrastructure.",
+      "Architected zero-downtime, multi-region AWS infrastructure on Elastic Beanstalk using GitHub Actions. Implemented Latency-Based Routing via Route 53 to globally serve traffic from Mumbai and Oregon, engineered automated SSL certificate generation (ACM), and optimized backend systems.",
     highlights: [
-      "Cut chat response time by ~30% with an AI chat assistant featuring asynchronous processing.",
+      "Designed and automated multi-region deployments (ap-south-1 & us-west-2) on AWS Elastic Beanstalk using GitHub Actions and CloudFormation.",
+      "Configured Route 53 Latency-Based Routing across regions, establishing a highly available global architecture with automatic failover.",
+      "Automated ACM SSL certificate generation and DNS validation via CloudFormation, ensuring secure end-to-end encryption.",
       "Engineered an ICS file generation system and automated event dispatch, saving 10+ hours per month.",
-      "Integrated Amazon SES for transactional emails and architected an AWS Elastic Beanstalk infrastructure with GitHub Actions.",
-      "Automated an end-to-end Playwright testing suite for Razorpay payment flows.",
+      "Integrated Amazon SES for reliable transactional emails and engineered end-to-end Playwright tests for payment flows.",
     ],
-    stack: ["AWS", "GitHub Actions", "Amazon SES", "Playwright", "Generative AI"],
+    stack: ["AWS CloudFormation", "Elastic Beanstalk", "Route 53", "GitHub Actions", "Java Spring", "Playwright"],
   },
 ]
 

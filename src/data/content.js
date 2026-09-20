@@ -151,15 +151,15 @@ export const experience = [
     company: "Flickmatch",
     period: "Dec 2025 — Sep 2026",
     summary:
-      "Architected zero-downtime, multi-region AWS infrastructure on Elastic Beanstalk using GitHub Actions. Implemented Latency-Based Routing via Route 53 to globally serve traffic from Mumbai and Oregon, engineered automated SSL certificate generation (ACM), and optimized backend systems.",
+      "Architected a global, zero-downtime AWS infrastructure spanning multiple regions and engineered an automated full-stack PR preview environment to streamline developer testing.",
     highlights: [
-      "Designed and automated multi-region deployments (ap-south-1 & us-west-2) on AWS Elastic Beanstalk using GitHub Actions and CloudFormation.",
-      "Configured Route 53 Latency-Based Routing across regions, establishing a highly available global architecture with automatic failover.",
-      "Automated ACM SSL certificate generation and DNS validation via CloudFormation, ensuring secure end-to-end encryption.",
-      "Engineered an ICS file generation system and automated event dispatch, saving 10+ hours per month.",
-      "Integrated Amazon SES for reliable transactional emails and engineered end-to-end Playwright tests for payment flows.",
+      "Designed and executed a unified multi-region deployment (Mumbai & Oregon) on AWS Elastic Beanstalk via GitHub Actions, integrating Route 53 Latency-Based Routing and automated ACM SSL certificates for global high availability.",
+      "Engineered a full-stack PR preview infrastructure using GitHub Actions, dynamically spinning up temporary Elastic Beanstalk backends linked to Netlify frontend previews for isolated end-to-end testing.",
+      "Implemented a label-driven ('preview-backend') workflow with automated cleanup upon PR closure, ensuring cost-efficiency and preventing resource leaks.",
+      "Engineered an ICS file generation system and automated event dispatch via Amazon SES, saving 10+ hours of manual overhead per month.",
+      "Automated an end-to-end Playwright testing suite for critical Razorpay payment flows.",
     ],
-    stack: ["AWS CloudFormation", "Elastic Beanstalk", "Route 53", "GitHub Actions", "Java Spring", "Playwright"],
+    stack: ["AWS", "Elastic Beanstalk", "Route 53", "GitHub Actions", "Netlify", "Java Spring"],
   },
 ]
 

@@ -195,12 +195,28 @@ export const projects = [
       "Engineered an ambiguity detection system that flags underspecified queries and triggers a Human-in-the-Loop clarification workflow.",
       "Developed a zero-trust SQL validation sandbox with SQLGlot that blocks 100% of destructive mutations.",
     ],
-    architecture: `[User]──►[FastAPI / LangGraph]──►[ChromaDB RAG]
-                    │ Human-in-the-Loop
-        ┌───────────┼───────────┐
-        ▼           ▼           ▼
-   [Ambiguity Check]     [SQLGlot Sandbox]
-        └─────► [Database Execution]`,
+    architecture: `[Streamlit UI] ──► [FastAPI] ──► [Rate Limiter]
+                         │
+                         ▼
+             ┌───► [Schema Retrieval]
+             │           │ (ChromaDB RAG)
+             │           ▼
+[HitL Pause] ◄──(Yes)── {Ambiguous?}
+             │           │
+             └───────────┴──(No)──► [LLM Generates SQL]
+                                            │
+                                            ▼
+                           ┌────── {SQLGlot Validation} ◄──┐
+                           │                │              │
+                       (Unsafe)           (Safe)      (Fix Query)
+                           │                │              │
+                           ▼                ▼              │
+                  [Security Error]    [Execute SQL] ─────(Error)
+                                            │
+                                        (Success)
+                                            │
+                                            ▼
+                                     [LLM Explanation] ──► [UI]`,
     tradeoffs:
       "Integrating Human-in-the-Loop clarification adds a step to the user experience but is essential for eliminating hallucinations in underspecified queries.",
     results: [

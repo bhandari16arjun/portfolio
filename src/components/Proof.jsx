@@ -47,8 +47,7 @@ export default function Proof() {
             ))}
           </div>
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-paper/55">
-            {stats[0].value}+ DSA problems on LeetCode, C++ networking patches in public repos, and
-            production-style intern work on React + Node + Postgres/Redis.
+            {stats[0].value} peak LeetCode rating (Knight), Codeforces Specialist, and proven ability to design production-grade systems—from Agentic RAG pipelines to multi-region AWS deployments.
           </p>
         </GlowCard>
       </Reveal>

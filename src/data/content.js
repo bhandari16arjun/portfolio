@@ -124,6 +124,8 @@ export const marquee = [
   "AWS",
   "Docker",
   "Redis",
+  "BullMQ",
+  "SQLite",
 ]
 
 export const skills = [
@@ -141,7 +143,7 @@ export const skills = [
   },
   {
     title: "Tools & Concepts",
-    items: ["Docker", "Redis", "BullMQ", "Git", "CI/CD", "System Design", "Generative AI"],
+    items: ["Docker", "Redis", "BullMQ", "Git", "CI/CD", "System Design", "AI DevTools (Antigravity, Claude, Gemini CLI, Codex)"],
   },
 ]
 
@@ -270,8 +272,8 @@ export const projects = [
 export const stats = [
   { value: 1922, suffix: "", label: "LeetCode Knight Rating" },
   { value: 1503, suffix: "", label: "Codeforces Specialist" },
-  { value: 30, suffix: "%", label: "Chat response time reduced" },
-  { value: 10, suffix: "h+", label: "Scheduling saved/month" },
+  { value: 100, suffix: "%", label: "Destructive queries blocked" },
+  { value: 10, suffix: "h+", label: "Manual scheduling saved/month" },
 ]
 
 export const socials = [

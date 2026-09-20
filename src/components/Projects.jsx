@@ -134,14 +134,26 @@ export default function Projects() {
               </p>
               <h3 className="mt-2 font-display text-2xl font-bold md:text-3xl">{project.title}</h3>
             </div>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2 font-mono text-xs uppercase tracking-wider text-paper transition-colors hover:border-accent hover:text-accent"
-            >
-              View on GitHub <span>↗</span>
-            </a>
+            <div className="flex gap-3">
+              {project.liveDemo && (
+                <a
+                  href={project.liveDemo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-accent/10 border border-accent/30 px-5 py-2 font-mono text-xs uppercase tracking-wider text-accent transition-colors hover:bg-accent/20 hover:border-accent"
+                >
+                  Live Demo <span className="text-[14px]">↗</span>
+                </a>
+              )}
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2 font-mono text-xs uppercase tracking-wider text-paper transition-colors hover:border-accent hover:text-accent"
+              >
+                View on GitHub <span>↗</span>
+              </a>
+            </div>
           </div>
 
           <div className="mt-8 grid gap-6 md:grid-cols-2">

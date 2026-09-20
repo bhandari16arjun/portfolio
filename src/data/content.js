@@ -188,12 +188,14 @@ export const projects = [
     metric: "100%",
     metricLabel: "blocked mutations",
     link: "https://github.com/bhandari16arjun/SqlPilot",
+    liveDemo: "https://sqlpilot-z317.onrender.com",
     problem:
       "Underspecified queries caused LLM hallucinations, and allowing LLMs to directly execute SQL introduced security risks with destructive database mutations.",
     approach: [
       "Architected a production-ready Agentic Text-to-SQL pipeline with ChromaDB RAG schema retrieval.",
       "Engineered an ambiguity detection system that flags underspecified queries and triggers a Human-in-the-Loop clarification workflow.",
       "Developed a zero-trust SQL validation sandbox with SQLGlot that blocks 100% of destructive mutations.",
+      "Validated backend execution against the 15,000-row Chinook Database, engineering a robust Pytest suite to rigorously test AST mutation filters and REST API routing.",
     ],
     architecture: `[Streamlit UI] ──► [FastAPI] ──► [Rate Limiter]
                          │

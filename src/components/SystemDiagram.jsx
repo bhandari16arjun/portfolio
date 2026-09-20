@@ -2,11 +2,11 @@ import { useEffect, useState } from "react"
 import { Globe, Cpu, Server, Database, Network } from "lucide-react"
 
 const NODES = {
-  lb: { label: "Edge Proxy", sub: "C++20 · epoll · consistent hash", color: "#4facfe", icon: Network, latency: 0.4 },
-  gateway: { label: "Express API", sub: "Node.js · async I/O", color: "#39ff14", icon: Server, latency: 6 },
-  engine: { label: "Core Engine", sub: "C++20 · lock-free · µs", color: "#ff4a77", icon: Cpu, latency: 0.08 },
-  cache: { label: "Redis", sub: "in-memory cache", color: "#f59e0b", icon: Database, latency: 0.8 },
-  db: { label: "PostgreSQL", sub: "source of truth", color: "#00f2fe", icon: Database, latency: 3 },
+  lb: { label: "FastAPI Gateway", sub: "Rate limit & proxy", color: "#4facfe", icon: Network, latency: 45 },
+  gateway: { label: "LangGraph Agent", sub: "HitL state machine", color: "#39ff14", icon: Cpu, latency: 800 },
+  engine: { label: "SQLGlot Sandbox", sub: "AST validation", color: "#ff4a77", icon: Server, latency: 1.2 },
+  cache: { label: "ChromaDB", sub: "Schema RAG", color: "#f59e0b", icon: Database, latency: 18 },
+  db: { label: "SQLite Execution", sub: "Read-only data", color: "#00f2fe", icon: Database, latency: 3.5 },
 }
 
 function LiveLatency({ base }) {
@@ -168,11 +168,11 @@ function FanIn() {
 }
 
 const LOGS = [
-  { tag: "[proxy]", color: "#4facfe", msg: "routed GET /api/v1/orders → node-02 (3ms)" },
-  { tag: "[express]", color: "#39ff14", msg: "200 OK /api/v1/users · 12ms · req#48217" },
-  { tag: "[core]", color: "#ff4a77", msg: "matched order 88213 in 0.08ms" },
-  { tag: "[redis]", color: "#f59e0b", msg: "cache HIT keyspace:user:4821 · 0.6ms" },
-  { tag: "[db]", color: "#00f2fe", msg: "SELECT · 2 rows · 2.8ms · slow-log ok" },
+  { tag: "[fastapi]", color: "#4facfe", msg: "POST /query · rate-limit pass · 12ms" },
+  { tag: "[langgraph]", color: "#39ff14", msg: "node: retrieve_schema · ChromaDB query · 45ms" },
+  { tag: "[langgraph]", color: "#39ff14", msg: "node: check_ambiguity · CLEAR · 820ms" },
+  { tag: "[sqlglot]", color: "#ff4a77", msg: "AST parse valid · no mutations detected · 1.2ms" },
+  { tag: "[sqlite]", color: "#00f2fe", msg: "EXECUTE SELECT · 15 rows · 3.5ms" },
 ]
 
 function LiveLog() {
@@ -198,7 +198,7 @@ export default function SystemDiagram({ selectedId, onSelectNode }) {
     <div className="glass overflow-hidden rounded-3xl p-5 md:p-8">
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
         <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted">
-          Request flow · C++ + Express
+          Request flow · SQLPilot Agent
         </span>
         <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-muted">
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00f2fe]" />
@@ -215,8 +215,8 @@ export default function SystemDiagram({ selectedId, onSelectNode }) {
 
         <VFlow />
 
-        {/* Tier 2 — Edge proxy (C++) */}
-        <TierLabel>02 · Edge · C++20</TierLabel>
+        {/* Tier 2 — Gateway */}
+        <TierLabel>02 · Gateway · Python</TierLabel>
         <div className="mt-2 flex w-full max-w-[260px] items-center justify-center">
           <NodeBox id="lb" selected={selectedId === "lb"} onSelect={onSelectNode} />
         </div>
@@ -227,8 +227,8 @@ export default function SystemDiagram({ selectedId, onSelectNode }) {
         </div>
         <FanOut />
 
-        {/* Tier 3 — Express + C++ services */}
-        <TierLabel>03 · Service Tier · Express + C++</TierLabel>
+        {/* Tier 3 — Agent & Sandbox */}
+        <TierLabel>03 · Agentic Tier · LangGraph + SQLGlot</TierLabel>
         <div className="mt-2 flex w-full max-w-[420px] flex-col items-center gap-0 md:max-w-none md:flex-row md:items-stretch md:gap-4">
           <div className="w-full md:w-auto">
             <NodeBox id="gateway" selected={selectedId === "gateway"} onSelect={onSelectNode} />
@@ -246,16 +246,16 @@ export default function SystemDiagram({ selectedId, onSelectNode }) {
           <VFlow />
         </div>
 
-        {/* Tier 4 — Cache */}
-        <TierLabel>04 · Cache Tier · Redis</TierLabel>
+        {/* Tier 4 — Context */}
+        <TierLabel>04 · Context Tier · Vector Store</TierLabel>
         <div className="mt-2 flex w-full max-w-[260px] items-center justify-center">
           <NodeBox id="cache" selected={selectedId === "cache"} onSelect={onSelectNode} />
         </div>
 
         <VFlow />
 
-        {/* Tier 5 — Storage */}
-        <TierLabel>05 · Storage Tier · source of truth</TierLabel>
+        {/* Tier 5 — Execution */}
+        <TierLabel>05 · Execution Tier · SQLite Sandbox</TierLabel>
         <div className="mt-2 flex w-full max-w-[280px] items-center justify-center">
           <NodeBox id="db" selected={selectedId === "db"} onSelect={onSelectNode} />
         </div>

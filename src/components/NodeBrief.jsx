@@ -3,66 +3,66 @@ import { Network, Server, Cpu, Database } from "lucide-react"
 
 const BRIEFS = {
   lb: {
-    title: "Edge Proxy",
-    tag: "C++20 · epoll",
+    title: "FastAPI Gateway",
+    tag: "Python · REST API",
     role: "Front door — every request lands here first.",
     about:
-      "An asynchronous reverse proxy on edge-triggered epoll. Consistent hashing keeps a key pinned to the same backend, Redis-backed token buckets rate-limit the edge, and a hot-reload swaps binaries without dropping a single connection.",
+      "Asynchronous FastAPI endpoint serving the Streamlit frontend. It validates incoming natural language queries, enforces rate limiting, and marshals requests into the LangGraph state machine.",
     stats: [
-      { label: "Throughput", value: 42000, suffix: " req/s", decimals: 0 },
-      { label: "p99 Latency", value: 0.4, suffix: " ms", decimals: 2 },
+      { label: "Queries/min", value: 120, suffix: " qpm", decimals: 0 },
+      { label: "p99 Latency", value: 45, suffix: " ms", decimals: 1 },
     ],
     color: "#4facfe",
     icon: Network,
   },
   gateway: {
-    title: "Express API",
-    tag: "Node.js · Express",
-    role: "REST + WebSocket routing layer.",
+    title: "LangGraph Agent",
+    tag: "Python · Agentic State Machine",
+    role: "The cognitive orchestrator.",
     about:
-      "Async-first Express services — JWT auth middleware, validated request handling, and WebSocket upgrade routing. One event loop, never blocked on I/O, easy to scale horizontally behind the proxy.",
+      "A compiled LangGraph state machine that drives the execution flow. It intelligently pauses for Human-in-the-Loop clarification when queries are ambiguous, and loops a self-correction node upon execution failures.",
     stats: [
-      { label: "Throughput", value: 18500, suffix: " req/s", decimals: 0 },
-      { label: "p99 Latency", value: 6, suffix: " ms", decimals: 1 },
+      { label: "HitL Pauses", value: 12, suffix: "%", decimals: 0 },
+      { label: "Avg Steps", value: 4, suffix: " nodes", decimals: 0 },
     ],
     color: "#39ff14",
-    icon: Server,
-  },
-  engine: {
-    title: "Core Engine",
-    tag: "C++20",
-    role: "The low-latency compute core.",
-    about:
-      "Lock-free data structures, cache-aligned types, and CPU pinning for deterministic sub-millisecond work. This is where time-critical computation lives — the hot path the Express layer hands off to.",
-    stats: [
-      { label: "Throughput", value: 220000, suffix: " ops/s", decimals: 0 },
-      { label: "p99 Latency", value: 0.08, suffix: " ms", decimals: 2 },
-    ],
-    color: "#ff4a77",
     icon: Cpu,
   },
-  cache: {
-    title: "Redis",
-    tag: "in-memory cache",
-    role: "Keeps the hot path off the database.",
+  engine: {
+    title: "SQLGlot Sandbox",
+    tag: "Python · AST Parser",
+    role: "Zero-trust validation layer.",
     about:
-      "Shared cache for sessions, rate-limit buckets, and hot reads. Lua scripts keep multi-step updates atomic, and a 94% hit ratio means most traffic never touches disk-backed storage.",
+      "Parses the LLM-generated SQL into an Abstract Syntax Tree (AST). It mathematically blocks 100% of destructive mutations (DROP, ALTER, DELETE) and ensures only permitted read-only views are queried.",
     stats: [
-      { label: "Hit ratio", value: 94, suffix: "%", decimals: 1 },
-      { label: "p99 Latency", value: 0.8, suffix: " ms", decimals: 2 },
+      { label: "Mutations Blocked", value: 100, suffix: "%", decimals: 0 },
+      { label: "Parse Time", value: 1.2, suffix: " ms", decimals: 2 },
+    ],
+    color: "#ff4a77",
+    icon: Server,
+  },
+  cache: {
+    title: "ChromaDB",
+    tag: "Vector Store · RAG",
+    role: "Injects database context.",
+    about:
+      "Retrieves the most relevant database schema definitions based on the user's natural language query via vector embeddings, ensuring the LLM generates syntactically correct SQL tailored to the exact schema.",
+    stats: [
+      { label: "Retrieve Time", value: 18, suffix: " ms", decimals: 1 },
+      { label: "Dim Size", value: 384, suffix: "d", decimals: 0 },
     ],
     color: "#f59e0b",
     icon: Database,
   },
   db: {
-    title: "PostgreSQL",
-    tag: "relational storage",
-    role: "Source of truth for durable writes.",
+    title: "SQLite Execution",
+    tag: "Relational Database",
+    role: "The data layer.",
     about:
-      "ACID transactions and strong consistency for everything that must survive a restart. Reads are served through Redis, keeping the primary light and write latency predictable.",
+      "Safely executes the validated SQL query against a local SQLite replica of the 15,000-row Chinook dataset, strictly capped with execution timeouts and row-limits to prevent resource exhaustion.",
     stats: [
-      { label: "Writes / s", value: 2400, suffix: "", decimals: 0 },
-      { label: "Replication lag", value: 0, suffix: " ms", decimals: 1 },
+      { label: "Rows Validated", value: 15000, suffix: "+", decimals: 0 },
+      { label: "Query Time", value: 3.5, suffix: " ms", decimals: 1 },
     ],
     color: "#00f2fe",
     icon: Database,

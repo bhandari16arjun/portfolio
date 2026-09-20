@@ -21,11 +21,10 @@ export default function Architecture() {
       />
       <SectionLabel index="07" label="System Architecture" />
       <h2 className="mt-10 max-w-3xl font-display text-4xl font-bold leading-tight md:text-6xl">
-        Backend architecture. <span className="italic-display text-gradient text-[1.05em]">C++ & Express.</span>
+        Agentic Text-to-SQL. <span className="italic-display text-gradient text-[1.05em]">SQLPilot RAG.</span>
       </h2>
       <p className="mt-4 max-w-xl text-base text-muted">
-        The reference shape of the systems I build — a C++ edge proxy in front of Express
-        services, with Redis and PostgreSQL underneath. Click a node for the brief.
+        The reference shape of my human-in-the-loop AI pipelines — a FastAPI gateway routing to LangGraph state machines, with ChromaDB schemas and SQLGlot validation underneath. Click a node for the brief.
       </p>
       <Reveal className="mt-10">
         <SystemDiagram selectedId={selected} onSelectNode={setSelected} />

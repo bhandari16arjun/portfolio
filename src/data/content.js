@@ -11,11 +11,11 @@ export const site = {
   notice: "Integrated B.Tech + M.Tech IT student · Graduating May 2027",
   portrait: "src/assets/portrait.jpeg",
   intro:
-    "I build intelligent full-stack applications and AI-driven systems — from Agentic Text-to-SQL pipelines to scalable microservices. Currently an Integrated B.Tech + M.Tech IT undergrad at IIITM Gwalior passionate about software engineering and generative AI.",
+    "I build intelligent full-stack applications and AI-driven systems — from Agentic Text-to-SQL pipelines to scalable microservices. Currently a final year Integrated B.Tech + M.Tech IT student at IIITM Gwalior passionate about software engineering and generative AI.",
   aboutBig:
     "I write software that bridges the gap between scalable systems and AI — clean architecture from MERN stack backends to LLM workflows.",
   about:
-    "I'm an IT undergrad at IIITM Gwalior (Integrated B.Tech + M.Tech '27). I've built a human-in-the-loop AI chat assistant at Flickmatch, a production-ready Agentic Text-to-SQL pipeline, and a microservices-inspired online code judge. I'm a LeetCode Knight and Codeforces Specialist with a strong foundation in Data Structures, Algorithms, and System Design.",
+    "I'm a final year IT student at IIITM Gwalior (Integrated B.Tech + M.Tech '27). I've built a human-in-the-loop AI chat assistant at Flickmatch, a production-ready Agentic Text-to-SQL pipeline, and a microservices-inspired online code judge. I'm a LeetCode Knight and Codeforces Specialist with a strong foundation in Data Structures, Algorithms, and System Design.",
 }
 
 export const navLinks = [

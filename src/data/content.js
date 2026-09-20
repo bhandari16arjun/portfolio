@@ -154,8 +154,7 @@ export const experience = [
       "Architected a global, zero-downtime AWS infrastructure spanning multiple regions and engineered an automated full-stack PR preview environment to streamline developer testing.",
     highlights: [
       "Designed and executed a unified multi-region deployment (Mumbai & Oregon) on AWS Elastic Beanstalk via GitHub Actions, integrating Route 53 Latency-Based Routing and automated ACM SSL certificates for global high availability.",
-      "Engineered a full-stack PR preview infrastructure using GitHub Actions, dynamically spinning up temporary Elastic Beanstalk backends linked to Netlify frontend previews for isolated end-to-end testing.",
-      "Implemented a label-driven ('preview-backend') workflow with automated cleanup upon PR closure, ensuring cost-efficiency and preventing resource leaks.",
+      "Engineered a full-stack PR preview infrastructure using GitHub Actions to dynamically provision temporary Elastic Beanstalk backends linked to Netlify previews, implementing a label-driven workflow with automated cleanup for cost-efficiency.",
       "Engineered an ICS file generation system and automated event dispatch via Amazon SES, saving 10+ hours of manual overhead per month.",
       "Automated an end-to-end Playwright testing suite for critical Razorpay payment flows.",
     ],

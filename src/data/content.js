@@ -155,10 +155,10 @@ export const experience = [
     highlights: [
       "Designed and executed a unified multi-region deployment (Mumbai & Oregon) on AWS Elastic Beanstalk via GitHub Actions, integrating Route 53 Latency-Based Routing and automated ACM SSL certificates for global high availability.",
       "Engineered a full-stack PR preview infrastructure using GitHub Actions to dynamically provision temporary Elastic Beanstalk backends linked to Netlify previews, implementing a label-driven workflow with automated cleanup for cost-efficiency.",
-      "Engineered an ICS file generation system and automated event dispatch via Amazon SES, saving 10+ hours of manual overhead per month.",
+      "Integrated Amazon SES into the backend to orchestrate transactional emails (payment confirmations and ICS calendar invites for successful bookings) and engineered automated workflows to trigger marketing emails for upcoming games.",
       "Automated an end-to-end Playwright testing suite for critical Razorpay payment flows.",
     ],
-    stack: ["AWS", "Elastic Beanstalk", "Route 53", "GitHub Actions", "Netlify", "Java Spring"],
+    stack: ["AWS", "Elastic Beanstalk", "Route 53", "Amazon SES", "GitHub Actions", "Netlify", "Java Spring"],
   },
 ]
 

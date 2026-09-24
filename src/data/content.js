@@ -151,7 +151,7 @@ export const experience = [
   {
     role: "Software Engineering Intern",
     company: "Flickmatch",
-    period: "Dec 2025 — Sep 2026",
+    period: "Dec 2025 — Aug 2026",
     summary:
       "Architected a global, zero-downtime AWS infrastructure spanning multiple regions and engineered an automated full-stack PR preview environment to streamline developer testing.",
     highlights: [
